@@ -49,15 +49,12 @@ class VMMain(
         }
     }
 
-    fun setLastInteractionTime(time: Long) = this.interactionHelper.setLastInteractionTime(this.context, time)
-
     fun checkInteractionTime() {
-        if(this.isInteractionTimeout()){
-            this._interactionTimeout.postValue(null)
-        } else {
-            setLastInteractionTime(System.currentTimeMillis())
-        }
+        if(this.isInteractionTimeout()){ this._interactionTimeout.postValue(null) }
+        else { setLastInteractionTime(System.currentTimeMillis()) }
     }
 
     fun clearSession(){ this.sharePreferences.clear() }
+
+    private fun setLastInteractionTime(time: Long) = this.interactionHelper.setLastInteractionTime(this.context, time)
 }

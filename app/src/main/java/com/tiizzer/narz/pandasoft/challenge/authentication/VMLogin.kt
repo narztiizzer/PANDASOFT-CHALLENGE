@@ -62,19 +62,6 @@ class VMLogin(
         }
     }
 
-    private fun getResponseFromServer(username: String, password: String): AuthenticationResponse? {
-        val response = repository.authenticate(LoginRequest(username, password)).execute()
-        if(response.body()?.status != 200){
-            throw Exception(
-                response.body()?.message ?:
-                response.errorBody()?.string() ?:
-                this@VMLogin.context.getString(R.string.authentication_problem_message)
-            )
-        } else {
-            return response.body()
-        }
-    }
-
     fun authenticate(username: String, password: String){
         if(isValidInput(username, password)){
             viewModelScope.launch(Dispatchers.Default) {
@@ -89,4 +76,16 @@ class VMLogin(
         }
     }
 
+    private fun getResponseFromServer(username: String, password: String): AuthenticationResponse? {
+        val response = repository.authenticate(LoginRequest(username, password)).execute()
+        if(response.body()?.status != 200){
+            throw Exception(
+                response.body()?.message ?:
+                response.errorBody()?.string() ?:
+                this@VMLogin.context.getString(R.string.authentication_problem_message)
+            )
+        } else {
+            return response.body()
+        }
+    }
 }

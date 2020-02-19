@@ -43,9 +43,13 @@ class DetailsActivity: AppCompatActivity() {
 
     private fun setupObserver() {
         this.vm().image.observe(this, Observer { Glide.with(this).load(it).into(content_image) })
+
         this.vm().title.observe(this, Observer { content_title.text = it })
+
         this.vm().details.observe(this, Observer { content_details.text = it })
+
         this.vm().date.observe(this, Observer { content_date.text = it })
+
         this.vm().showMessage.observe(this, Observer {
             Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
         })
