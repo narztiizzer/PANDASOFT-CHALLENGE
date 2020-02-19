@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">PANDASOFT-CHALLENGE</string>
+    <string name="app_ok">OK</string>
+    <string name="app_access_token_key">pds.chal.access_token</string>
+    <string name="app_refresh_token_key">pds.chal.refresh_token</string>
+    <string name="app_token_expire_key">pds.chal.expire_time</string>
+    <string name="interact_time_key">INTERACT-TIME</string>
+    <string name="server_problem_message">Oops!! Response problem from server</string>
+    <string name="authentication_problem_message">Oops!! Authentication problem</string>
+    <string name="username_problem_message">Please check your username.</string>
+    <string name="password_problem_message">Please check your password.</string>
+
+    <string name="login_username_hint">ชื่อผู้ใช้งาน</string>
+    <string name="login_password_hint">รหัสผ่าน</string>
+    <string name="login_button_text">ลงชื่อเข้าใช้</string>
+
+    <string name="session_dialog_title">Timeout</string>
+    <string name="session_dialog_message">Your session is timeout, please login again.</string>
+
+    <string name="details_parcel_key">data.wrapper</string>
+    <string name="details_like_button">LIKE</string>
+    <string name="details_like_success">Like !!</string>
+</resources>

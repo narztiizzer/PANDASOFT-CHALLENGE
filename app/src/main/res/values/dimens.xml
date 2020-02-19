@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_8dp">8dp</dimen>
+    <dimen name="app_16dp">16dp</dimen>
+    <dimen name="app_32dp">32dp</dimen>
+    <dimen name="app_64dp">64dp</dimen>
+    <dimen name="app_128dp">128dp</dimen>
+    <dimen name="login_field_width">284dp</dimen>
+    <dimen name="login_button_width">192dp</dimen>
+    <dimen name="details_image_height">256dp</dimen>
+</resources>
