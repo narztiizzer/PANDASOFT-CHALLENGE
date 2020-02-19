@@ -16,19 +16,12 @@ class InteractionTimeoutHelper private constructor(){
         context: Context,
         time: Long = Calendar.getInstance().timeInMillis
     ){
-        SharePreferencesHelper(context).setLastInteractTime(time)
+        this.getSharePreferences(context).setLastInteractTime(time)
     }
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun getLastInteractionTime(context: Context) = getSharePreferences(context).getLastInteractTime()
 
-
-    private fun getSharePreferences(context: Context) : SharePreferencesHelper {
-        if(this.sharePreferencesHelper == null){
-            this.sharePreferencesHelper = SharePreferencesHelper(context)
-        }
-        return this.sharePreferencesHelper!!
-    }
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun setSharePreferences(sharePreferencesHelper: SharePreferencesHelper)  {
@@ -40,5 +33,12 @@ class InteractionTimeoutHelper private constructor(){
         val current = Calendar.getInstance().timeInMillis
         val diff = current - lastInteraction
         return diff > INTERACT_TIMEOUT
+    }
+
+    private fun getSharePreferences(context: Context) : SharePreferencesHelper {
+        if(this.sharePreferencesHelper == null){
+            this.sharePreferencesHelper = SharePreferencesHelper(context)
+        }
+        return this.sharePreferencesHelper!!
     }
 }

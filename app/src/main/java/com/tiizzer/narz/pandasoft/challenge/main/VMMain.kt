@@ -42,11 +42,8 @@ class VMMain(
     fun isInteractionTimeout() = this.interactionHelper.isInteractionTimeout(this.context)
 
     fun prepare(){
-        if(isHasCacheUser()){
-            this._showHomePage.postValue(null)
-        } else {
-            this._showLoginPage.postValue(null)
-        }
+        if(isHasCacheUser()){ this._showHomePage.postValue(null) }
+        else { this._showLoginPage.postValue(null) }
     }
 
     fun checkInteractionTime() {
