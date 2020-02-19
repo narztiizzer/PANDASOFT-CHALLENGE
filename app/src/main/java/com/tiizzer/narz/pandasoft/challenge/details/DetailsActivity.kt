@@ -3,6 +3,7 @@ package com.tiizzer.narz.pandasoft.challenge.details
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
@@ -69,4 +70,9 @@ class DetailsActivity: AppCompatActivity() {
     }
 
     private fun vm() = this.vmDetails
+
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    fun prepareMockData(){
+        this.vm().prepareMockData()
+    }
 }

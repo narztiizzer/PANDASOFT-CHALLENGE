@@ -58,6 +58,14 @@ class VMDetails(
     }
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    fun prepareMockData(){
+        this._image.postValue("")
+        this._title.postValue("Hello, details page.")
+        this._details.postValue("This is a content for detail page")
+        this._date.postValue(this.convertTimestampToString(System.currentTimeMillis() / 1000))
+    }
+
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun isInteractionTimeout() = this.interactionHelper.isInteractionTimeout(this.context)
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
