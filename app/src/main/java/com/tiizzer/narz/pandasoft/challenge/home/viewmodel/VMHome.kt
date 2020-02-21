@@ -90,6 +90,7 @@ class VMHome(
     fun saveNewAccessToken(response: AuthenticationResponse?){
         response?.let {
             sharePreferences.setAccessToken(it.access_token)
+            sharePreferences.setRefreshToken(it.refresh_token)
             sharePreferences.setTokenExpireTime(it.expires_in)
         }
     }

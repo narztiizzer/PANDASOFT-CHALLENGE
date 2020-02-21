@@ -2,6 +2,7 @@ package com.tiizzer.narz.pandasoft.challenge.main
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.tiizzer.narz.pandasoft.challenge.R
@@ -73,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun openNewActivity() {
         this.startActivity(Intent(this.applicationContext, MainActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
